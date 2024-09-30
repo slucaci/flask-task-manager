@@ -9,12 +9,6 @@ def home():
     return render_template("tasks.html", tasks=tasks)
 
 
-@app.route('/create-tables')
-def create_tables():
-    db.create_all()
-    return "Tables created successfully!"
-
-
 @app.route("/categories")
 def categories():
     categories = list(Category.query.order_by(Category.category_name).all())
